@@ -14,6 +14,9 @@ public class PlayerBehavior : MonoBehaviour
 
     public Camera mainCamera;
 
+    public bool isShooting;
+    private bool canShoot;
+
 
 
     public float angle;
@@ -28,7 +31,7 @@ public class PlayerBehavior : MonoBehaviour
 
     public void Start()
     {
-
+        canShoot = true;
     }
 
     public void Update()
@@ -43,7 +46,22 @@ public class PlayerBehavior : MonoBehaviour
     }
 
     public void Shoot()
+    {   
+        if (canShoot)
+        {
+            StartCoroutine(ShootCoroutine());
+        }
+    }
+
+    public IEnumerator ShootCoroutine()
     {
-        Instantiate(bullet, canonWeapon.transform.position, canonWeapon.transform.rotation);
+        do
+        {
+            Instantiate(bullet, canonWeapon.transform.position, canonWeapon.transform.rotation);
+            canShoot = false;
+            yield return new WaitForSeconds(PlayerStats.Instance.coolDownAttack);
+        } while (isShooting);
+        canShoot = true;
+        yield break;
     }
 }

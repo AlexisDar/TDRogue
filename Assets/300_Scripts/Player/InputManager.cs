@@ -31,11 +31,13 @@ public class InputManager : MonoBehaviour
     private void OnEnable()
     {
         attack.performed += _ => InputAttack();
+        attack.canceled += _ => InputStopAttack();
     }
 
     private void OnDisable()
     {
         attack.performed -= _ => InputAttack();
+        attack.canceled -= _ => InputStopAttack();
     }
 
 
@@ -47,6 +49,11 @@ public class InputManager : MonoBehaviour
 
     public void InputAttack()
     {
+        PlayerBehavior.Instance.isShooting = true;
         PlayerBehavior.Instance.Shoot();
+    }
+    public void InputStopAttack()
+    {
+        PlayerBehavior.Instance.isShooting = false;
     }
 }

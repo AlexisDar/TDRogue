@@ -11,11 +11,16 @@ public class PlayerStats : MonoBehaviour
 
     public float moveSpeed;
 
+    public float coolDownAttack;
+    public float attackSpeed;
+
     public void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
         }
+
+        coolDownAttack = 1 / attackSpeed;
     }
 }
