@@ -14,7 +14,7 @@ public class InputManager : MonoBehaviour
     private InputAction mouse;
     public Vector3 mousePos;
 
-    public InputAction attack;
+    private InputAction attack;
 
     public void Awake()
     {
