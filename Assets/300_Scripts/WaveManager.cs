@@ -34,7 +34,12 @@ public class WaveManager : MonoBehaviour
 
     public void LoadNextWave()
     {
+        if (actualWave != waveNbr)
+        {
+            actualWave++;
+        level_UI.UpdateUI();
         StartCoroutine(SpawnEnemies());
+        }
     }
 
     public void Update()
@@ -54,6 +59,9 @@ public class WaveManager : MonoBehaviour
             enemyToSpawn--;
             yield return new WaitForSeconds(1f);
         } while (enemyToSpawn > 0);
+
+        LoadNextWave();
+        enemyToSpawn = 10;
 
         yield break;
     }
