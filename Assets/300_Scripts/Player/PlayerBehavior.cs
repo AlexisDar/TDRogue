@@ -45,6 +45,11 @@ public class PlayerBehavior : MonoBehaviour
         baseRotateWeapon.transform.eulerAngles = new Vector3(0, 0, angle);
     }
 
+    public void TakeDamage(float damage)
+    {
+        PlayerStats.Instance.curretHp -= damage;
+    }
+
     public void Shoot()
     {   
         if (canShoot)

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ClassicProjectile : ProjectileParent
 {
+    public void Start()
+    {
+        dmg = 3;
+    }
 
     public void Update()
     {
@@ -14,7 +18,8 @@ public class ClassicProjectile : ProjectileParent
     {
         if(collision.gameObject.TryGetComponent(out EnnemiParent ennemiParent)) 
         {
-            Destroy(collision.gameObject);
+            ennemiParent.TakeDamage(dmg);
+
             Destroy(this.gameObject);
         }
     }

@@ -8,5 +8,8 @@ public class SO_Ennemi : ScriptableObject
     public int ID;
     public string ennemiName;
     public string description;
-    public Sprite image;
+    public Sprite icon;
+
+    public float Hp;
+    public float DamageBase;
 }

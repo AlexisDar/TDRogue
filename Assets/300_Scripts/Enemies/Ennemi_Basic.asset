@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Ennemi_Basic
   m_EditorClassIdentifier: 
   ID: 0
-  ennemiName: 
+  ennemiName: Noeil
   description: 
-  image: {fileID: 0}
+  icon: {fileID: 0}
+  Hp: 9
+  DamageBase: 1
