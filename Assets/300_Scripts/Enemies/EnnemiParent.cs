@@ -10,6 +10,7 @@ public class EnnemiParent : MonoBehaviour
     public float speed;
     public float currentHp;
 
+    public SpriteRenderer spriteRenderer;
 
     public void Awake()
     {
@@ -24,5 +25,13 @@ public class EnnemiParent : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHp -= damage;
+        StartCoroutine(ChangeColorWithDmg());
+    }
+
+    public IEnumerator ChangeColorWithDmg()
+    {
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = Color.white;
     }
 }

@@ -9,20 +9,15 @@ public class Ennemi_Base : EnnemiParent
 
     public void Start()
     {
-
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void Update()
     {
         target = PlayerBehavior.Instance.transform.position;
         transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime);
-        if (target.x < transform.position.x)
-        {
-            transform.localScale = new Vector2 (-1,1);
-        } else
-        {
-            transform.localScale = new Vector2 (1,1);
-        }
+
+        spriteRenderer.flipX = target.x < transform.position.x; 
 
         if (currentHp <= 0)
         {
