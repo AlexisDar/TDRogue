@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -5028593271546683377}
   - component: {fileID: 29204250248102489}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 38c23260aac5b7c46b4e74ac4a07d772, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fe758a3197201194b9712592f6a4bbe2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   dmg: 0
+  popUp: {fileID: 1777775842346100520, guid: a3d4f9885a7e7ca4783c5d8d1efa23ed, type: 3}
 --- !u!61 &29204250248102489
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -132,16 +133,16 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0027367175, y: -0.0009123534}
+  m_Offset: {x: 0.0012398064, y: 0.0035782903}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 0.4}
+    oldSize: {x: 1, y: 0.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.81572586, y: 0.42163453}
+  m_Size: {x: 1.0222943, y: 0.29290345}
   m_EdgeRadius: 0

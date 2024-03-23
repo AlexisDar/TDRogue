@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ClassicProjectile : ProjectileParent
@@ -19,6 +20,8 @@ public class ClassicProjectile : ProjectileParent
         if(collision.gameObject.TryGetComponent(out EnnemiParent ennemiParent)) 
         {
             ennemiParent.TakeDamage(dmg);
+
+            PopUpDamage(dmg);
 
             Destroy(this.gameObject);
         }
